@@ -8,10 +8,11 @@ public class HiloAlumno extends Thread {
 
     private final int sleepingTime;
     private final HiloProfesor profesor;
-    private Random r = new Random();
+    boolean desinfectado = true;
 
     public HiloAlumno(String nombre, HiloProfesor profesor){
         this.nombre = nombre;
+        Random r = new Random();
         boolean llegaTarde = r.nextBoolean();
 
         if (!llegaTarde) {
@@ -36,6 +37,6 @@ public class HiloAlumno extends Thread {
     }
 
     public void serDesinfectado() {
-        boolean desinfectado = true;
+        desinfectado = true;
     }
 }
